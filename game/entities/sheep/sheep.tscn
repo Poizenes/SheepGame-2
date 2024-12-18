@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dbiygdwtkcldq"]
+[gd_scene load_steps=23 format=3 uid="uid://dbiygdwtkcldq"]
 
 [ext_resource type="Script" path="res://entities/sheep/sheep.gd" id="1_2a07q"]
 [ext_resource type="Texture2D" uid="uid://bcjundf5q40ku" path="res://entities/sheep/sprites/sheep_walk.png" id="1_jv6h0"]
@@ -51,38 +51,6 @@ region = Rect2(256, 384, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0odj7"]
 atlas = ExtResource("1_jv6h0")
 region = Rect2(384, 384, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k6aeb"]
-atlas = ExtResource("1_jv6h0")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xqoga"]
-atlas = ExtResource("1_jv6h0")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v4cmd"]
-atlas = ExtResource("1_jv6h0")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eigir"]
-atlas = ExtResource("1_jv6h0")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i8b8y"]
-atlas = ExtResource("1_jv6h0")
-region = Rect2(0, 256, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_02v5w"]
-atlas = ExtResource("1_jv6h0")
-region = Rect2(128, 256, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uaaej"]
-atlas = ExtResource("1_jv6h0")
-region = Rect2(256, 256, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmt46"]
-atlas = ExtResource("1_jv6h0")
-region = Rect2(384, 256, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vs8m7"]
 atlas = ExtResource("1_jv6h0")
@@ -155,40 +123,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k6aeb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xqoga")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v4cmd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eigir")
-}],
-"loop": true,
-"name": &"walk_north",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i8b8y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_02v5w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uaaej")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mmt46")
-}],
-"loop": true,
-"name": &"walk_south",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_vs8m7")
 }, {
 "duration": 1.0,
@@ -225,7 +159,7 @@ wait_timer = NodePath("WaitTimer")
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_hr6v3")
-animation = &"walk_east"
+animation = &"eat_east"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
