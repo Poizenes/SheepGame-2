@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var grass_scene = load("res://entities/grass/grass.tscn")
-@onready var sheep_scene = load("res://entities/sheep/sheep.tscn")
+@onready var sheep_scene = load("res://entities/actor/sheep/sheep.tscn")
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("spawn_grass"):

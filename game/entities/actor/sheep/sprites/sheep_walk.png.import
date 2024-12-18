@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8fpke1b2v6sa"
-path="res://.godot/imported/sheep_eat.png-dfb16b8f03bd2ed8360a827e28813d13.ctex"
+uid="uid://bcjundf5q40ku"
+path="res://.godot/imported/sheep_walk.png-899f46c0ad636b15737e0312940639cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/sheep/sprites/sheep_eat.png"
-dest_files=["res://.godot/imported/sheep_eat.png-dfb16b8f03bd2ed8360a827e28813d13.ctex"]
+source_file="res://entities/actor/sheep/sprites/sheep_walk.png"
+dest_files=["res://.godot/imported/sheep_walk.png-899f46c0ad636b15737e0312940639cd.ctex"]
 
 [params]
 

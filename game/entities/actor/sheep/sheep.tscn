@@ -1,8 +1,8 @@
 [gd_scene load_steps=23 format=3 uid="uid://dbiygdwtkcldq"]
 
-[ext_resource type="Script" path="res://entities/sheep/sheep.gd" id="1_2a07q"]
-[ext_resource type="Texture2D" uid="uid://bcjundf5q40ku" path="res://entities/sheep/sprites/sheep_walk.png" id="1_jv6h0"]
-[ext_resource type="Texture2D" uid="uid://8fpke1b2v6sa" path="res://entities/sheep/sprites/sheep_eat.png" id="2_om8pk"]
+[ext_resource type="Script" path="res://entities/actor/sheep/sheep.gd" id="1_2a07q"]
+[ext_resource type="Texture2D" uid="uid://bcjundf5q40ku" path="res://entities/actor/sheep/sprites/sheep_walk.png" id="1_jv6h0"]
+[ext_resource type="Texture2D" uid="uid://8fpke1b2v6sa" path="res://entities/actor/sheep/sprites/sheep_eat.png" id="2_om8pk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c3sul"]
 atlas = ExtResource("2_om8pk")
@@ -145,15 +145,13 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brndd"]
 size = Vector2(12, 12)
 
-[node name="Sheep" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "eat_area", "hunger_timer", "wait_timer")]
+[node name="Sheep" type="CharacterBody2D" node_paths=PackedStringArray("action_area", "sprite")]
 top_level = true
 collision_layer = 2
-collision_mask = 2
+collision_mask = 6
 script = ExtResource("1_2a07q")
+action_area = NodePath("EatArea")
 sprite = NodePath("Sprite")
-eat_area = NodePath("EatArea")
-hunger_timer = NodePath("HungerTimer")
-wait_timer = NodePath("WaitTimer")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -173,5 +171,3 @@ position = Vector2(22, 12)
 shape = SubResource("RectangleShape2D_brndd")
 
 [node name="HungerTimer" type="Timer" parent="."]
-
-[node name="WaitTimer" type="Timer" parent="."]
