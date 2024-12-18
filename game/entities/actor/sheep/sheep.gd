@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.normalized() * WALK_SPEED
 	move_and_slide()
 
-func eat() -> void:
+func eat(_object = null) -> void:
 	velocity = Vector2.ZERO
 	match sprite.animation:
 		"walk_east":

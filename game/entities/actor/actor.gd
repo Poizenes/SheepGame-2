@@ -19,6 +19,7 @@ var strolling_target: Vector2 = Vector2(-1, -1)
 var is_waiting: bool = false
 var action: Callable = func(): pass
 var is_hungry: bool = false
+var speed: int = WALK_SPEED
 
 @onready var wait_timer: Timer = Timer.new()
 @onready var hunger_timer: Timer = Timer.new()
@@ -44,7 +45,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if IS_PLAYER_CONTROLLED:
 		handle_input()
-	velocity = velocity.normalized() * WALK_SPEED
+	velocity = velocity.normalized() * speed
 	move_and_slide()
 
 func _process(delta: float) -> void:
@@ -61,7 +62,7 @@ func handle_input() -> void:
 	velocity.x = (int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left")))
 	velocity.y = (int(Input.is_action_pressed("down")) - int(Input.is_action_pressed("up")))
 	if Input.is_action_just_pressed("action") && action_area.has_overlapping_bodies():
-		action.call()
+		action.call(action_area.get_overlapping_bodies()[0])
 
 func die() -> void:
 	print(self.name, " died.")

@@ -145,13 +145,14 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brndd"]
 size = Vector2(12, 12)
 
-[node name="Sheep" type="CharacterBody2D" node_paths=PackedStringArray("action_area", "sprite")]
+[node name="Sheep" type="CharacterBody2D" node_paths=PackedStringArray("action_area", "sprite") groups=["sheep"]]
 top_level = true
 collision_layer = 2
-collision_mask = 6
+collision_mask = 2
 script = ExtResource("1_2a07q")
 action_area = NodePath("EatArea")
 sprite = NodePath("Sprite")
+RUN_SPEED = 100
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
