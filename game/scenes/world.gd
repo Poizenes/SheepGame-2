@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var camera: Camera2D
+
 @onready var grass_scene = load("res://entities/grass/grass.tscn")
 @onready var sheep_scene = load("res://entities/actor/sheep/sheep.tscn")
 @onready var wolf_scene = load("res://entities/actor/wolf/wolf.tscn")
@@ -22,3 +24,9 @@ func _input(event: InputEvent) -> void:
 		wolf.position = pos
 	elif event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
+	elif event.is_action_pressed("zoom_in"):
+		if camera.zoom.x <= 4:
+			camera.zoom *= 2
+	elif event.is_action_pressed("zoom_out"):
+		if camera.zoom.x >= 0.25:
+			camera.zoom /= 2
