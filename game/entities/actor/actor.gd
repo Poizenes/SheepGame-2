@@ -45,8 +45,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if IS_PLAYER_CONTROLLED:
 		handle_input()
-	velocity = velocity.normalized() * speed
-	move_and_slide()
+	apply_movement()
 
 func _process(delta: float) -> void:
 	if velocity.x < 0:
@@ -63,6 +62,10 @@ func handle_input() -> void:
 	velocity.y = (int(Input.is_action_pressed("down")) - int(Input.is_action_pressed("up")))
 	if Input.is_action_just_pressed("action") && action_area.has_overlapping_bodies():
 		action.call(action_area.get_overlapping_bodies()[0])
+
+func apply_movement() -> void:
+		velocity = velocity.normalized() * speed
+		move_and_slide()
 
 func die() -> void:
 	print(self.name, " died.")

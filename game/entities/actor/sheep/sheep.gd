@@ -17,9 +17,7 @@ func _physics_process(delta: float) -> void:
 		search_for_food()
 	else:
 		stroll()
-	
-	velocity = velocity.normalized() * WALK_SPEED
-	move_and_slide()
+	apply_movement()
 
 func eat(_object = null) -> void:
 	velocity = Vector2.ZERO
@@ -28,8 +26,6 @@ func eat(_object = null) -> void:
 			sprite.play("eat_east")
 		"walk_west":
 			sprite.play("eat_west")
-		_:
-			pass
 
 func consume() -> void:
 	if action_area.get_overlapping_bodies().is_empty():

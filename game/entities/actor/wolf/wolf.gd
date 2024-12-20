@@ -13,15 +13,14 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if IS_PLAYER_CONTROLLED:
-		super.handle_input()
+		handle_input()
 	elif action_area.has_overlapping_bodies():
 		attack(action_area.get_overlapping_bodies()[0])
 	elif is_hungry:
 		hunt_for_sheep()
 	else:
 		stroll()
-	velocity = velocity.normalized() * speed
-	move_and_slide()
+	apply_movement()
 
 func attack(sheep) -> void:
 	velocity = Vector2.ZERO
@@ -31,8 +30,6 @@ func attack(sheep) -> void:
 			sprite.play("attack_east")
 		"walk_west":
 			sprite.play("attack_west")
-		_:
-			pass
 	attacked_sheep = sheep
 
 func kill(sheep: Sheep) -> void:
